@@ -1,6 +1,8 @@
 let express = require('express');
-
 let app = express();
+
+app.set('view engine', 'ejs');
+
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/index.html');
 });
@@ -14,9 +16,8 @@ app.get('/api', function(request, response) {
 });
 
 app.get('/profile/:name', function(request, response) {
-  response.send(
-    'You requested to see ap profile with name of ' + request.params.name
-  );
+  let data = { age: 29, job: 'ninja' };
+  response.render('profile', { person: request.params.name, data: data });
 });
 
 app.listen(3000);
