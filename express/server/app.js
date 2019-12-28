@@ -16,7 +16,11 @@ app.get('/api', function(request, response) {
 });
 
 app.get('/profile/:name', function(request, response) {
-  let data = { age: 29, job: 'ninja' };
+  let data = {
+    age: 29,
+    job: 'ninja',
+    hobbies: ['eating', 'fighting', 'fishing']
+  };
   response.render('profile', { person: request.params.name, data: data });
 });
 
