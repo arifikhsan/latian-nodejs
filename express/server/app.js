@@ -6,7 +6,7 @@ let server = http.createServer(function(request, response) {
   if (request.url === '/home' || request.url === '/') {
     response.writeHead(200, { 'Content-Type': 'text/html' });
     fs.createReadStream(__dirname + '/index.html').pipe(response);
-  } else if (request.url === '/contact') {
+  } else if (request.url === '/contact-us') {
     response.writeHead(200, { 'Content-Type': 'text/html' });
     fs.createReadStream(__dirname + '/contact.html').pipe(response);
   } else if (request.url === '/api/ninjas') {
