@@ -4,11 +4,11 @@ let app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/index.html');
+  response.render('index');
 });
 
 app.get('/contact', function(request, response) {
-  response.send('this is the contact page');
+  response.render('contact');
 });
 
 app.get('/api', function(request, response) {
